@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubham • Portfolio</title>
+    <link rel="icon" type="image/png" href="./favicon.jpeg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="hello-text" id="helloText">Hello</div>
+    </div>
+
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="project-preview" id="projectPreview"></div>
+
+    <nav id="navbar">
+        <div class="logo">Shubham</div>
+        <div class="nav-center">
+            <ul class="nav-links">
+                <li><a href="#home">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                    </svg>
+                    Home
+                </a></li>
+                <li><a href="#about">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                    About
+                </a></li>
+                <li><a href="#work">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    Work
+                </a></li>
+                <li><a href="#contact">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    Contact
+                </a></li>
+                <li>
+                <a href="assets/Shubham_Resume.pdf" download class="resume-btn">
+                    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+                    </svg>
+                    Resume
+                </a>
+            </li>
+            </ul>
+        </div>
+        <div class="theme-toggle" id="themeToggle"></div>
+    </nav>
+
+
+    
+    <section class="hero" id="home">
+        <div class="background-animation">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        <div class="hero-content">
+            <h1>ML/AI Developer</h1>
+            <p>Building intelligent systems that learn and adapt</p>
+            <a href="#work" class="cta-button">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <img src="Images/me.png" alt="Shubham" class="profile-pic">
+            <p id="aboutText1"></p>
+            <p id="aboutText2"></p>
+        </div>
+    </section>
+
+    <section id="work">
+        <h2 class="section-title">Featured Projects</h2>
+        
+        <div class="project-tabs">
+            <button class="tab-button active" data-tab="genai">AI/ML</button>
+            <button class="tab-button" data-tab="analytics">Data Analytics</button>
+        </div>
+
+        <div class="tab-content active" id="genai">
+            <div class="projects-grid">
+                <div class="project-card" data-image="sentiment" data-preview="Images/carDamage.png">
+                    <h3>Vehicle Damage Detector</h3>
+                    <p>
+                        <ul>
+                            <li>Built a vehicle damage classification system using transfer learning with ResNet50, achieving ~80% validation accuracy across 6 damage categories (front/rear normal, crushed, breakage).</li>
+                            <li>Developed a robust preprocessing pipeline with resizing, normalization, and data augmentation to improve model generalization.</li>
+                            <li>Implemented a custom classifier head with dropout after fine-tuning ResNet50, outperforming Custom CNN and EfficientNet baselines.</li>
+                            <li>Deployed the solution with a Streamlit interface for real-time predictions and a FastAPI backend for scalable API access.</li>
+                        </ul>
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Deep Learning</span>
+                        <span class="tag">CNN</span>
+                        <span class="tag">PyTroch</span>
+                        <span class="tag">Scikit-Learn</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">FastAPI</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://cardamagedetection-sam.streamlit.app/" class="project-link">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/sam20799/car_damage_detection.git" class="project-link">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card" data-image="chatbot" data-preview="Images/creditRiskModel.png">
+                    <h3>Credit Risk Modelling Platform</h3>
+                    <p>
+                        <ul>
+                            <li>Developed a credit risk prediction app using a tuned XGBoost model to estimate loan default probability, credit score, and credit rating.</li>
+                            <li>Built a full preprocessing pipeline and analyzed 13 key financial features for accurate credit risk assessment.</li>
+                            <li>Identified major risk factors like Loan-to-Income Ratio, Credit Utilization, and Delinquency through feature importance analysis.</li>
+                            <li>Provided actionable insights to improve creditworthiness, supported by an interactive feature importance dashboard.</li>
+                        </ul>
+                    </p>                    
+                    <div class="project-tags">
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Logistic Regression</span>
+                        <span class="tag">XGBoost</span>
+                        <span class="tag">Feature Engineering</span>
+                        <span class="tag">EDA</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Numpy</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Matplotlib</span>
+                        <span class="tag">Seaborn</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://creditriskmodel-sam.streamlit.app/" class="project-link">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/sam20799/ml_credit_risk_model" class="project-link">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card" data-image="image" data-preview="Images/HealthCareCost.png">
+                    <h3>Health Insurance Cost Predictor</h3>
+                    <p>
+                        <ul>
+                            <li>Built an insurance premium prediction app using two optimized ML models: XGBoost for Age > 25 (99% accuracy) and Linear Regression for Age ≤ 25 (98% accuracy).</li>
+                            <li>Designed a preprocessing pipeline to ensure reliable predictions across different customer age groups.</li>
+                            <li>Analyzed key factors such as Age, Income, Dependents, Plan Type, Risk Score, BMI, Smoking Status, Employment, Region, Gender, and Medical History.</li>
+                            <li>Delivers precise premium estimates with an interpretable model structure optimized for real-world insurance use cases.</li>
+                        </ul>
+                    </p>                     
+                    <div class="project-tags">
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Linear Regression</span>
+                        <span class="tag">XGBoost</span>
+                        <span class="tag">Scikit-Learn</span>
+                        <span class="tag">Data Analytics</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Numpy</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Matplotlib</span>
+                        <span class="tag">Seaborn</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://insurancepremiumprediction-bysam.streamlit.app/" class="project-link">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/sam20799/Insurance_premium_prediction" class="project-link">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card" data-image="speech" data-preview="https://images.unsplash.com/photo-1589254065878-42c9da997008?w=400&h=300&fit=crop">
+                    <h3>Speech Recognition System</h3>
+                    <p>Coming Soon...</p>
+                    <div class="project-tags">
+                        <span class="tag">Whisper</span>
+                        <span class="tag">Audio Processing</span>
+                        <span class="tag">TensorFlow</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                            Live Demo
+                        </a>
+                        <a href="#" class="project-link">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <div class="tab-content" id="analytics">
+            <div class="projects-grid">
+                <div class="project-card" data-image="object" data-preview="Images/Market.png">
+                    <h3>Marketing Campaign Impact Analysis - IPL Season</h3>
+                        <p>
+                            <li>Conducted a cost-benefit analysis by forecasting IPL vs. non-IPL sales and profitability, cleaning and preparing raw datasets, and applying historical trends and regional insights for accurate modeling.</li>
+                            <li>Built interactive dashboards for region-wise performance tracking, validating a 14.99% sales uplift, ₹24.4M incremental contribution, and ₹5.28M profit gain, supporting the IPL marketing investment.</li>
+                        </p>                    
+                        <div class="project-tags">
+                        <span class="tag">Excel Analytics</span>
+                        <span class="tag">Sales Forecasting</span>
+                        <span class="tag">Cost-Benefit Analysis</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://docs.google.com/spreadsheets/d/1wcWOWIK0903lksdHkivn9-LGR570JZvd36qDsZZB71A/edit?usp=sharing" class="project-link">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                            Live Demo
+                        </a>
+                        <!-- <a href="#" class="project-link">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a> -->
+                    </div>
+                </div>
+                <div class="project-card" data-image="analytics" data-preview="Images/Order.png">
+                    <h3>Order Trend & Delivery Efficiency Analysis - Cloud Kitchen</h3>
+                        <p>
+                            <li>
+                                Analyzed raw order datasets to identify peak demand patterns, meal-time trends, weekday/weekend revenue shifts, and cancellation behaviors impacting overall kitchen performance.
+                            </li>
+                            <li>
+                                Performed delay diagnostics to pinpoint major causes and high-risk locations, creating dashboards for order trends and delivery metrics that improved operational efficiency and driver allocation.
+                            </li>
+                        </p>                    
+                        <div class="project-tags">
+                        <span class="tag">Excel Analytics</span>
+                        <span class="tag">Order Trend Analysis</span>
+                        <span class="tag">Operational Analytics</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://docs.google.com/spreadsheets/d/1Ie1iQDxG0U8vle_BHaz7cnPmWHoXTJeqLMhr4c1xCNs/edit?usp=sharing" class="project-link">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                            Live Demo
+                        </a>
+                        <!-- <a href="#" class="project-link">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a> -->
+                    </div>
+                </div>
+                <div class="project-card" data-image="analytics" data-preview="Images/rfm.png">
+                    <h3>Customer Segmentation & Retention Analysis</h3>
+                        <p>
+                            <li>
+                               Developed a comprehensive sales dashboard to track total sales, orders, cancellations, revenue contribution, and category-wise performance across multiple regions, enabling real-time insights and continuous monitoring of business KPIs.
+                            </li>
+                            <li>
+                                Performed RFM-driven customer segmentation and detailed feedback analysis to identify high-value segments, uncover churn triggers, and design personalized messaging strategies that strengthened retention, improved loyalty, and boosted repeat sales.
+                            </li>
+                        </p>                   
+                        <div class="project-tags">
+                        <span class="tag">Excel Analytics</span>
+                        <span class="tag">Churn & Retention Analysis</span>
+                        <span class="tag">RFM Analysis</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://docs.google.com/spreadsheets/d/1V_IGs3RMr13ahJWNcLJfvbuqcKE9bbqHKiadc5bMEd0/edit?usp=sharing" class="project-link">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                            Live Demo
+                        </a>
+                        <!-- <a href="#" class="project-link">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a> -->
+                    </div>
+                </div>
+                <div class="project-card" data-image="analytics" data-preview="Images/powerBI.png">
+                    <h3>Ad Campaign Analysis</h3>
+                        <p>
+                            <li>Interactive Power BI dashboard tracking Ads running on social media platforms.</li>
+                            <li>Monthly Campaign Analysis with Net Sales, Total AdSpend, MoM Change.</li>
+                            <li>Detailed Campaign Analysis with ROI,ROAC,RPC</li>
+                        </p>                   
+                        <div class="project-tags">
+                        <span class="tag">Power BI Dashboard</span>
+                        <span class="tag">Campaign Performance</span>
+                        <span class="tag">ROI & Ad Analytics</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://docs.google.com/document/d/1YgYvWyDl7SPNXiAX-6XSoHRpJ1sAWzQx7UEAG7oYa3s/edit?tab=t.0#heading=h.hejolfug20h9" class="project-link">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                            Live Demo
+                        </a>
+                        <!-- <a href="#  " class="project-link">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a> -->
+                    </div>
+                </div>
+                <div class="project-card" data-image="analytics" data-preview="Images/RFMT.png">
+                    <h3>RFM Analysis | Personalized Customer Segmentation</h3>
+                        <p>
+                            <li>Provides customer-type-wise segmentation with key metrics (total watch hours, avg visit frequency, total customers, avg watch time) along with personalized messages for each segment.</li>
+                            <li>Includes interactive filters for customer type and gender, enabling targeted insights and deeper customer behavior analysis.</li>
+                        </p>                   
+                        <div class="project-tags">
+                        <span class="tag">Tableau Dashboard </span>
+                        <span class="tag">RFM Analysis</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://public.tableau.com/app/profile/shubham.k4305/viz/SHUBHAM_OLA_12_Fixed/Dashboard1?publish=yes" class="project-link">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                            Live Demo
+                        </a>
+                        <!-- <a href="#  " class="project-link">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a> -->
+                    </div>
+                </div>
+                <div class="project-card" data-image="analytics" data-preview="Images/looker.png">
+                    <h3>Cloud Kitchen Analysis</h3>
+                        <p>
+                            <li>Order Trend Peak Time vs Non Peak Time</li>
+                            <li>Order Status: Delayed, Cancelled, OnTime Orders</li>
+                            <li>Weekday vs Weekend Trend</li>
+                            <li>Meal-time Order Trend</li>
+                        </p>                   
+                        <div class="project-tags">
+                        <span class="tag">Looker Studio Dashboard </span>
+                        <span class="tag">Time-Series & Operational Analysiss</span>
+                        <span class="tag">Data-Driven Performance Optimization</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://lookerstudio.google.com/reporting/01484c6e-fa6d-4233-a2d1-de3934308fff" class="project-link">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                            Live Demo
+                        </a>
+                        <!-- <a href="#" class="project-link">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a> -->
+                    </div>
+                </div>
+                <div class="project-card" data-image="analytics" data-preview="Images/variance.png">
+                    <h3>Variance Analysis</h3>
+                        <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Matplotlib</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://colab.research.google.com/drive/159zLrHGrGzE70aTypTB-UVHW_j-KfKHy?usp=sharing" class="project-link">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                            Live Demo
+                        </a>
+                        <!-- <a href="#" class="project-link">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a> -->
+                    </div>
+                </div>
+                <div class="project-card" data-image="analytics" data-preview="Images/pareto.png">
+                    <h3>Pareto Analysis</h3>
+                        <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Matplotlib</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://colab.research.google.com/drive/1hnRciIooISmerugY_xqEjU2ENLaTkip2?usp=sharing" class="project-link">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                            Live Demo
+                        </a>
+                        <!-- <a href="#" class="project-link">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <h2 class="section-title">Skills</h2>
+    <section id="skills">
+        <div class="skills-container">
+            <div class="skills">
+                <div class="skill">Python</div>
+                <div class="skill">TensorFlow</div>
+                <div class="skill">PyTorch</div>
+                <div class="skill">Scikit-Learn</div>
+                <div class="skill">Keras</div>
+                <div class="skill">NLP</div>
+                <div class="skill">Computer Vision</div>
+                <div class="skill">Deep Learning</div>
+                <div class="skill">Neural Networks</div>
+                <div class="skill">LLMs</div>
+                <div class="skill">Transformers</div>
+                <div class="skill">RAG</div>
+                <div class="skill">Python</div>
+                <div class="skill">TensorFlow</div>
+                <div class="skill">PyTorch</div>
+                <div class="skill">Scikit-Learn</div>
+                <div class="skill">Keras</div>
+                <div class="skill">NLP</div>
+                <div class="skill">Computer Vision</div>
+                <div class="skill">Deep Learning</div>
+                <div class="skill">Neural Networks</div>
+                <div class="skill">LLMs</div>
+                <div class="skill">Transformers</div>
+                <div class="skill">RAG</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="skills-container">
+            <div class="skills1">
+                <div class="skill">Python</div>
+                <div class="skill">SQL</div>
+                <div class="skill">Excel</div>
+                <div class="skill">Power BI</div>
+                <div class="skill">Tableau</div>
+                <div class="skill">Statistics</div>
+                <div class="skill">Data Cleaning</div>
+                <div class="skill">Data Visualization</div>
+                <div class="skill">EDA</div>
+                <div class="skill">A/B Testing</div>
+                <div class="skill">Machine Learning</div>
+                <div class="skill">Forecasting</div>
+                <div class="skill">RFM Analysis</div>
+                <div class="skill">Churn Analysis</div>
+                <div class="skill">Funnel Analysis</div>
+                <div class="skill">Cost-Benefit Analysis</div>
+                <div class="skill">Python</div>
+                <div class="skill">SQL</div>
+                <div class="skill">Excel</div>
+                <div class="skill">Power BI</div>
+                <div class="skill">Tableau</div>
+                <div class="skill">Statistics</div>
+                <div class="skill">Data Cleaning</div>
+                <div class="skill">Data Visualization</div>
+                <div class="skill">EDA</div>
+                <div class="skill">A/B Testing</div>
+                <div class="skill">Machine Learning</div>
+                <div class="skill">Forecasting</div>
+                <div class="skill">RFM Analysis</div>
+                <div class="skill">Churn Analysis</div>
+                <div class="skill">Funnel Analysis</div>
+                <div class="skill">Cost-Benefit Analysis</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <form class="contact-form" action="https://formspree.io/f/xyzedjoe" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="cta-btn">Send Message</button>
+                
+                <input type="text" name="_gotcha" style="display:none">
+                
+                <div class="form-status"></div>
+            </form>
+        </div>
+
+        <p style="font-size: 1.3rem; opacity: 0.8; margin: 3rem 0 2rem;">Or find me on social media</p>
+        <div class="contact-links">
+            <a href="mailto:shubham.2k07@gmail.com" class="social-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+            </a>
+            <a href="https://github.com/sam20799" class="social-icon" target="_blank">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+            <a href="https://linkedin.com/in/shubhamk07" class="social-icon" target="_blank">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+            </a>
+            <a href="#" class="social-icon" target="_blank">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 SHUBHAM KR. All rights reserved.</p>
+    </footer>
+
+    <div class="mobile-bottom-nav">
+        <ul class="nav-links">
+            <li><a href="#home">
+                <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                </svg>
+            </a></li>
+            <li><a href="#about">
+                <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                </svg>
+            </a></li>
+            <li><a href="#work">
+                <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+            </a></li>
+            <li><a href="#contact">
+                <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+            </a></li>
+            <li><a href="assets/Shubham_Resume.pdf" download class="resume-btn">
+                <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+                </svg>
+            </a></li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
