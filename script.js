@@ -1,5 +1,5 @@
 // Loading screen animation
-const hellos = ['Hello','Hola','こんにちは','Guten Tag','नमस्ते'];
+const hellos = ['Hello','Hola','こんにちは','नमस्ते'];
 let currentIndex = 0;
 const helloText = document.getElementById('helloText');
 const loadingScreen = document.getElementById('loadingScreen');
